@@ -5,7 +5,7 @@ public class Main{
         System.out.println("Welcome to Address Book Program on Master Branch");
         AddressBook obj = new AddressBook();
         obj.addressBook();
-        EditAddressBook obj2 = new EditAddressBook();
-        obj2.editAddressBook();
+        DeleteContact del = new DeleteContact();
+        del.delete();
     }
 }
