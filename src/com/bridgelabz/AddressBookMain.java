@@ -1,36 +1,38 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static com.bridgelabz.AddContact.arrayOfContacts;
+import static com.bridgelabz.AddressBookFunctions.arrayOfContacts;
 
-public class AddressBookMain extends AddressBook{
-    /*static ArrayList<AddressBook> contacts = new ArrayList<>();*/
+public class AddressBookMain{
 
     public static void main(String[] args) {
         System.out.println("Enter your choice from below:");
-        System.out.println("1.Add contact\t" +
-                "2.Edit contacts\t" +
-                "3.Delete contacts\t" +
-                "4.Display contact");
+        System.out.println("1.Add AddressBook"+
+                "2.Add contact\t" +
+                "3.Edit contacts\t" +
+                "4.Delete contacts\t");
         Scanner scanner = new Scanner(System.in);
         int input  = scanner.nextInt();
         switch (input) {
             case 1:
+                AddressBookFunctions.addAddressBook();
+            case 2:
                 int i =1;
                 do {
-                    AddContact.addContact();
+                    System.out.println("Enter addressbook name:");
+                    String book = scanner.next();
+                    AddressBookFunctions.addContact(book);
                     System.out.println("Do you want to add more contact? press 1 or press any key to exit.");
                     i = scanner.nextInt();
                 } while (i==1);
                 break;
-            case 2:
-                EditContact.editContact();
-                break;
             case 3:
-                DeleteContact.deleteContact((ArrayList<AddressBook>) arrayOfContacts);
+                AddressBookFunctions.editContact();
+                break;
+            case 4:
+                AddressBookFunctions.deleteContact((ArrayList<AddressBook>) arrayOfContacts);
                 break;
             default:
                 System.out.println("Enter a valid choice.");
