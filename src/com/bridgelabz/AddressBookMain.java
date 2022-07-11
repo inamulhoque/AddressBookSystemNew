@@ -14,7 +14,9 @@ public class AddressBookMain{
             System.out.println("1.Add AddressBook" +
                     "2.Add contact\t" +
                     "3.Edit contacts\t" +
-                    "4.Delete contacts\t");
+                    "4.Delete contacts\t" +
+                    "5.Find contact with same city\t" +
+                    "6.Find contact with same state");
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
             switch (input) {
@@ -36,6 +38,15 @@ public class AddressBookMain{
                 case 4:
                     AddressBookFunctions.deleteContact((ArrayList<AddressBook>) Contacts);
                     break;
+                case 5:
+                    System.out.println("Enter city:");
+                    String city = scanner.next();
+                    AddressBookFunctions.sameCity(city);
+                    break;
+                case 6:
+                    System.out.println("Enter state:");
+                    String state = scanner.next();
+                    AddressBookFunctions.sameState(state);
                 default:
                     System.out.println("Enter a valid choice.");
                     break;

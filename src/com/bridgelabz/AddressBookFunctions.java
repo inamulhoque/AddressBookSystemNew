@@ -11,6 +11,8 @@ public class AddressBookFunctions {
     public static ArrayList<AddressBook> Contacts = new ArrayList<>();
     public static Scanner obj = new Scanner(System.in);
     public static HashMap<String,ArrayList<AddressBook>> hashMapOfAddressBook = new HashMap<>();
+    public static HashMap<String,String> cityDictionary = new HashMap<>();
+    public static HashMap<String,String> stateDictionary = new HashMap<>();
 
     public static void addContact(String bookName){
         System.out.print("First name: ");
@@ -43,6 +45,8 @@ public class AddressBookFunctions {
             AddressBook.setPhone(phone);
 
             AddressBook addressBook = new AddressBook(firstName, lastName, city, state, zip, phone, mail);
+            cityDictionary.put(firstName+" "+lastName,city);
+            stateDictionary.put(firstName+" "+lastName,state);
             if (findAddressBook(bookName) != null)
                 hashMapOfAddressBook.get(bookName).add(addressBook);
 
@@ -118,5 +122,19 @@ public class AddressBookFunctions {
                 return false;
         }
         return true;
+    }
+    public static void sameCity(String city){
+        for (String data: cityDictionary.keySet()){
+            if (cityDictionary.get(data).equals(city)){
+                System.out.println("Same city found "+data);
+            }
+        }
+    }
+    public static void sameState(String state){
+        for (String data : stateDictionary.keySet()){
+            if (stateDictionary.get(data).equals(state)){
+                System.out.println("Same state found "+data);
+            }
+        }
     }
 }
