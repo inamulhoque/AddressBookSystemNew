@@ -124,17 +124,23 @@ public class AddressBookFunctions {
         return true;
     }
     public static void sameCity(String city){
+        byte count = 0;
         for (String data: cityDictionary.keySet()){
             if (cityDictionary.get(data).equals(city)){
+                count ++;
                 System.out.println("City found "+data);
             }
         }
+        System.out.println("Total number of city with name "+city+" found "+count+" times.");
     }
     public static void sameState(String state){
+        byte count =0;
         for (String data : stateDictionary.keySet()){
             if (stateDictionary.get(data).equals(state)){
+                count++;
                 System.out.println("State found "+data);
             }
         }
+        System.out.println("Total number of state with name "+state+" found "+count+" times.");
     }
 }
