@@ -15,8 +15,8 @@ public class AddressBookMain{
                     "2.Add contact\t" +
                     "3.Edit contacts\t" +
                     "4.Delete contacts\t" +
-                    "5.Find contact with same city\t" +
-                    "6.Find contact with same state");
+                    "5.View contact with city name\t" +
+                    "6.View contact with state name");
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
             switch (input) {

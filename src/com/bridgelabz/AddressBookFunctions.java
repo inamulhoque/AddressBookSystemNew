@@ -126,14 +126,14 @@ public class AddressBookFunctions {
     public static void sameCity(String city){
         for (String data: cityDictionary.keySet()){
             if (cityDictionary.get(data).equals(city)){
-                System.out.println("Same city found "+data);
+                System.out.println("City found "+data);
             }
         }
     }
     public static void sameState(String state){
         for (String data : stateDictionary.keySet()){
             if (stateDictionary.get(data).equals(state)){
-                System.out.println("Same state found "+data);
+                System.out.println("State found "+data);
             }
         }
     }
