@@ -149,4 +149,19 @@ public class AddressBookFunctions {
         String name = obj.next();
         hashMapOfAddressBook.get(name).stream().map(x->x.getFirstName()).sorted().forEach(x-> System.out.println(x));
     }
+    public static void sortByCity(){
+        System.out.println("Enter addressbook name:");
+        String name = obj.next();
+        hashMapOfAddressBook.get(name).stream().map(x->x.getCity()).sorted().forEach(x-> System.out.println(x));
+    }
+    public static void sortByState(){
+        System.out.println("Enter addressbook name:");
+        String name = obj.next();
+        hashMapOfAddressBook.get(name).stream().map(x->x.getState()).sorted().forEach(x-> System.out.println(x));
+    }
+    public static void sortByZip(){
+        System.out.println("Enter addressbook name:");
+        String name = obj.next();
+        hashMapOfAddressBook.get(name).stream().map(x->x.getZip()).sorted().forEach(x-> System.out.println(x));
+    }
 }
