@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import static com.bridgelabz.AddressBook.*;
 
@@ -142,5 +143,10 @@ public class AddressBookFunctions {
             }
         }
         System.out.println("Total number of state with name "+state+" found "+count+" times.");
+    }
+    public static void sortByName(){
+        System.out.println("Enter addressbook name:");
+        String name = obj.next();
+        hashMapOfAddressBook.get(name).stream().map(x->x.getFirstName()).sorted().forEach(x-> System.out.println(x));
     }
 }

@@ -16,7 +16,8 @@ public class AddressBookMain{
                     "3.Edit contacts\t" +
                     "4.Delete contacts\t" +
                     "5.View contact with city name\t" +
-                    "6.View contact with state name");
+                    "6.View contact with state name\t" +
+                    "7.View the contacts in sorted order");
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
             switch (input) {
@@ -47,6 +48,10 @@ public class AddressBookMain{
                     System.out.println("Enter state:");
                     String state = scanner.next();
                     AddressBookFunctions.sameState(state);
+                    break;
+                case 7:
+                    System.out.println("Display in sorted");
+                    AddressBookFunctions.sortByName();
                 default:
                     System.out.println("Enter a valid choice.");
                     break;
